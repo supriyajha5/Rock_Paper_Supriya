@@ -1,4 +1,4 @@
-# game.py
+# rock.py
 
 import random
 
@@ -25,13 +25,17 @@ print("--------------")
 print("GENERATING...")
 print("COMPUTER CHOICE:", computer_choice)
 
-key_beats_value: {"rock":"scissors", "paper":"rock", "scissors":"paper"}
+key_beats_value = {"rock":"scissors", "paper":"rock", "scissors":"paper"}
 # DETERMINE THE WINNER
 if user_choice==computer_choice:
     print("TIE!")
-elif for x,y in key_beats_value.items():
+else:
+    for x,y in key_beats_value.items():
         if user_choice==str(x):
-            print("Winner is " + str(y))
+            if computer_choice==str(y):
+                print(str(user_choice) + " beats " + str(computer_choice) + " You won!!")
+            else:
+                print(str(computer_choice) + " beats " + str(user_choice) + " You lost!")
 
 
 # DISPLAY FINAL OUTPUTS / OUTCOMES
